@@ -1,5 +1,5 @@
-# SpecialChars
-============
+SpecialChars
+======
 
 An extension for [Brackets](https://github.com/adobe/brackets/) for better handling with some chars for HTML.
 
@@ -17,8 +17,9 @@ The extension checks after writing a word and then pressing right arrow or space
 ö,ä,ü,§,ß
 
 **For Example:**
-    * `österreich` turns into `&ouml;sterreich`.
-    * `§5` turn into `&sect;5`.
+
+    + `österreich` turns into `&ouml;sterreich`.
+    + `§5` turn into `&sect;5`.
     
 But if there is a file with such chars in it, which you didn't wrote, you can just select an specific area, which you want to change, and then just press `Ctrl-Alt-H`.
 

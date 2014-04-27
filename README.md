@@ -13,14 +13,14 @@ An extension for [Brackets](https://github.com/adobe/brackets/) for better handl
 The extension checks after writing a word and then pressing right arrow or space, if there is a special char in it. 
 
 **Chars supported:**
-    - ö,ä,ü,§,ß
+ö,ä,ü,§,ß
 
 **For Example:**
-    - 'österreich' turns into '&ouml;sterreich'.
-    - '§5' turn into '&sect;5'.
+    *`österreich` turns into `&ouml;sterreich`.
+    *`§5` turn into `&sect;5`.
     
-But if there is a file with such chars in it, which you didn't wrote, you can just select an specific area, which you want to change, and then just press 'Ctrl-Alt-H'.
+But if there is a file with such chars in it, which you didn't wrote, you can just select an specific area, which you want to change, and then just press `Ctrl-Alt-H`.
 
-### Compatibility
+***
 Tested on Brackets Sprint 38, Windows 8.
     

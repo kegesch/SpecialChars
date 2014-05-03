@@ -3,7 +3,7 @@
     "title": "HTML Special Chars",
     "description": "After writing a word it coverts in in HTML code. Or just select the specified text and press Strg-Alt-H and it'll be converted. Converted chars: ä,ö,ü,§,ß",
     "homepage": "http://jonasgeschke.de",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Jonas Geschke (http://github.com/Y0nnyy)",
     "license": "MIT",
     "engines": {

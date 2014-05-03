@@ -33,7 +33,7 @@ define(function (require, exports, module) {
     }
         
     function clear(text, editor, start, end) {
-        text = text.replace(/§/g, "&sect;").replace(/ä/g, "&aauml;").replace(/ü/g, "&uuml;").replace(/ö/g, "&ouml;").replace(/ß/g, "&szlig;");
+        text = text.replace(/§/g, "&sect;").replace(/ä/g, "&auml;").replace(/ü/g, "&uuml;").replace(/ö/g, "&ouml;").replace(/ß/g, "&szlig;");
         editor.document.replaceRange(text, start, end);
     }
         

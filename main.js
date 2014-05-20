@@ -26,14 +26,55 @@ define(function (require, exports, module) {
             erg = true;
         } else if (word.indexOf("ß") > -1) {
             erg = true;
+        } else if (word.indexOf("à") > -1) {
+            erg = true;
+        } else if (word.indexOf("â") > -1) {
+            erg = true;
+        } else if (word.indexOf("á") > -1) {
+            erg = true;
+        } else if (word.indexOf("é") > -1) {
+            erg = true;
+        } else if (word.indexOf("è") > -1) {
+            erg = true;
+        } else if (word.indexOf("ê") > -1) {
+            erg = true;
+        } else if (word.indexOf("î") > -1) {
+            erg = true;
+        } else if (word.indexOf("ï") > -1) {
+            erg = true;
+        } else if (word.indexOf("í") > -1) {
+            erg = true;
+        } else if (word.indexOf("ô") > -1) {
+            erg = true;
+        } else if (word.indexOf("ó") > -1) {
+            erg = true;
+        } else if (word.indexOf("œ") > -1) {
+            erg = true;
+        } else if (word.indexOf("ü") > -1) {
+            erg = true;
+        } else if (word.indexOf("û") > -1) {
+            erg = true;
+        } else if (word.indexOf("«") > -1) {
+            erg = true;
+        } else if (word.indexOf("»") > -1) {
+            erg = true;
+        } else if (word.indexOf("’") > -1) {
+            erg = true;
+        } else if (word.indexOf("¿") > -1) {
+            erg = true;
+        } else if (word.indexOf("¡") > -1) {
+            erg = true;
+        } else if (word.indexOf("°") > -1) {
+            erg = true;            
         } else {
             erg = false;
         }
         return erg;
     }
-        
+
     function clear(text, editor, start, end) {
-        text = text.replace(/§/g, "&sect;").replace(/ä/g, "&auml;").replace(/ü/g, "&uuml;").replace(/ö/g, "&ouml;").replace(/ß/g, "&szlig;");
+        text = text.replace(/§/g, "&sect;").replace(/ä/g, "&auml;").replace(/ü/g, "&uuml;").replace(/ö/g, "&ouml;").replace(/ß/g, "&szlig;").replace(/à/g, "&agrave;").replace(/â/g, "&acirc;").replace(/á/g, "&aacute;").replace(/é/g, "&eacute;").replace(/è/g, "&egrave;").replace(/ê/g, "&ecirc;").replace(/î/g, "&icirc;").replace(/ï/g, "&iuml;").replace(/í/g, "&iacute;").replace(/ô/g, "&orcirc;").replace(/ó/g, "&oacute;").replace(/œ/g, "oe").replace(/ü/g, "&uml;").replace(/û/g, "&ucirc;").replace(/«/g, "&laquo;").replace(/»/g, "&raquo;").replace(/’/g, "'").replace(/¿/g, "&iquest;").replace(/¡/g, "&iexcl;").replace(/°/g, "&deg;");
+
         editor.document.replaceRange(text, start, end);
     }
         

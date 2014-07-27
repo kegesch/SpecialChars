@@ -14,7 +14,7 @@ The extension checks after writing a word and then pressing right arrow or space
 
 **Chars supported:**
 
-Ö,Ä,Ü,ö,ä,ü,§,ß,à,â,á,é,è,ê,î,ï,í,ô,ó,œ,ü,û,ù,«,»,’,¿,¡,°,À,É,È
+Ö,Ä,Ü,ö,ä,ü,§,ß,à,â,á,é,è,ê,î,ï,í,ô,ó,œ,ü,û,ù,«,»,’,¿,¡,°,À,É,È,ç,Ç,Â,Ê,Î,Ô,Û,ã,Ã,õ,Õ,ñ,Ñ
 
 **For Example:**
 

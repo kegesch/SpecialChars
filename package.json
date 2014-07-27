@@ -1,9 +1,9 @@
 {
     "name": "y0nnyy.specialchars",
     "title": "HTML Special Chars",
-    "description": "After writing a word it coverts in in HTML code. Or just select the specified text and press Strg-Alt-H and it'll be converted. Converted chars: ä,ö,ü,§,ß",
+    "description": "After writing a word it converts in in HTML code. Or just select the specified text and press Strg-Alt-H and it'll be converted.",
     "homepage": "https://github.com/Y0nnyy/SpecialChars",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "author": "Jonas Geschke (http://github.com/Y0nnyy)",
     "license": "MIT",
     "engines": {

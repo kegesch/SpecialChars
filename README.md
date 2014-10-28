@@ -14,7 +14,7 @@ The extension checks after writing a word and then pressing right arrow or space
 
 **Chars supported:**
 
-Ö,Ä,Ü,ö,ä,ü,§,ß,à,â,á,é,è,ê,î,ï,í,ô,ó,œ,ü,û,ù,«,»,’,¿,¡,°,À,É,È,ç,Ç,Â,Ê,Î,Ô,Û,ã,Ã,õ,Õ,ñ,Ñ,å,Å,æ,Ø,ø
+Ö,Ä,Ü,ö,ä,ü,§,ß,à,â,á,é,è,ê,î,ï,í,ô,ó,œ,ü,û,ù,«,»,’,¿,¡,°,À,É,È,ç,Ç,Â,Ê,Î,Ô,Û,ã,Ã,õ,Õ,ñ,Ñ,å,Å,æ,Ø,ø,€,•
 
 **For Example:**
 
@@ -24,5 +24,5 @@ The extension checks after writing a word and then pressing right arrow or space
 But if there is a file with such chars in it, which you didn't wrote, you can just select an specific area, which you want to change, and then just press `Ctrl-Alt-H`.
 
 ***
-Tested on Brackets Sprint 39, Windows 8.1 and Ubuntu.
+Tested on Brackets Sprint 38, Windows 8.1 and Ubuntu.
     

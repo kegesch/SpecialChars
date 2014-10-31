@@ -11,7 +11,7 @@ define(function (require, exports, module) {
         Commands = brackets.getModule("command/Commands"),
         AppInit = brackets.getModule("utils/AppInit"),
         KeyEvent = brackets.getModule("utils/KeyEvent");
-    
+        
     function containsChar(word) {
         var erg;
         if (word.indexOf("&") > -1) {
@@ -135,7 +135,6 @@ define(function (require, exports, module) {
     var parseLine = function (line, cursorColumn) {
         var words;
         line = line.substring(0, cursorColumn);
-        //split the line in "words" made of alphanumeric char or underscores (a-zA-Z0-9 and _)
         words = line.split(" ");
         return words[words.length - 1];
     };
@@ -172,11 +171,13 @@ define(function (require, exports, module) {
         var editor = EditorManager.getFocusedEditor();
         editor.document.batchOperation(function () {
             var text;
-            if (editor.getSelections().length > 1) {
-                var selects = editor.getSelections();
+            var selectionsCount = editor.getSelections().length;
+            var selects = editor.getSelections();
+            if (selectionsCount > 1) {
+                var text1 = editor.getSelectedText(true).split("\n");
                 var i;
-                for (i = 0; i < editor.getSelections().lenth; i++) {
-                    text = clear(editor.getSelectedText(true), editor, selects[i].start, selects[i].end);
+                for (i = 0; i < selectionsCount; i++) {
+                    text = clear(text1[i], editor, selects[i].start, selects[i].end);
                 }
             } else {
                 text = clear(editor.getSelectedText(true), editor, editor.getSelection().start, editor.getSelection().end);
@@ -188,7 +189,7 @@ define(function (require, exports, module) {
     AppInit.appReady(function () {
         CommandManager.register("SC Select", "specialchars.scselect", scSelect);
         var menu = Menus.getMenu(Menus.AppMenuBar.EDIT_MENU);
-        menu.addMenuItem("specialchars.scselect", { "key": "Ctrl-Shift-R" });
+        menu.addMenuItem("specialchars.scselect", { "key": "Ctrl-Shift-Q" });
         var currentEditor = EditorManager.getCurrentFullEditor();
         $(currentEditor).on('keyEvent', keyEventHandler);
         $(EditorManager).on('activeEditorChange', activeEditorChangeHandler);

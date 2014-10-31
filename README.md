@@ -21,7 +21,7 @@ The extension checks after writing a word and then pressing right arrow or space
     + `österreich` turns into `&ouml;sterreich`.
     + `§5` turn into `&sect;5`.
     
-But if there is a file with such chars in it, which you didn't wrote, you can just select an specific area, which you want to change, and then just press `Ctrl-Alt-H`.
+But if there is a file with such chars in it, which you didn't wrote, you can just select an specific area, which you want to change, and then just press `Ctrl-Shift-Q`.
 
 ***
 Tested on Brackets Sprint 38, Windows 8.1 and Ubuntu.

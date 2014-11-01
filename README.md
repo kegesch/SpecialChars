@@ -23,6 +23,8 @@ The extension checks after writing a word and then pressing right arrow or space
     
 But if there is a file with such chars in it, which you didn't wrote, you can just select an specific area, which you want to change, and then just press `Ctrl-Shift-Q`.
 
+If you want to stop using the automatic replacement you can just uncheck the command in the Edit-Menu (SpecialChars).
+
 ***
 Tested on Brackets Sprint 38, Windows 8.1 and Ubuntu.
     

@@ -10,8 +10,9 @@ define(function (require, exports, module) {
         Menus = brackets.getModule("command/Menus"),
         Commands = brackets.getModule("command/Commands"),
         AppInit = brackets.getModule("utils/AppInit"),
-        KeyEvent = brackets.getModule("utils/KeyEvent");
-        
+        KeyEvent = brackets.getModule("utils/KeyEvent"),
+        KeyBindingManager = brackets.getModule("command/KeyBindingManager");
+            
     function containsChar(word) {
         var erg;
         if (word.indexOf("&") > -1) {
@@ -144,16 +145,19 @@ define(function (require, exports, module) {
             line,
             word,
             start;
-        if (((event.type === "keydown") && (event.keyCode === KeyEvent.DOM_VK_SPACE)) || ((event.type === "keydown") && (event.keyCode === KeyEvent.DOM_VK_ENTER)) || ((event.type === "keydown") && (event.keyCode === KeyEvent.DOM_VK_RIGHT))) {
-            cursorPosition = editor.getCursorPos();
-            line = editor.document.getLine(cursorPosition.line);
-            word = parseLine(line, cursorPosition.ch);
-            start = {
-                line: cursorPosition.line,
-                ch: cursorPosition.ch - word.length
-            };
-            if (containsChar(word)) {
-                clear(word, editor, start, cursorPosition);
+        var commmand = CommandManager.get("specialchars.scselect");
+        if (commmand.getChecked()) {
+            if (((event.type === "keydown") && (event.keyCode === KeyEvent.DOM_VK_SPACE)) || ((event.type === "keydown") && (event.keyCode === KeyEvent.DOM_VK_ENTER)) || ((event.type === "keydown") && (event.keyCode === KeyEvent.DOM_VK_RIGHT))) {
+                cursorPosition = editor.getCursorPos();
+                line = editor.document.getLine(cursorPosition.line);
+                word = parseLine(line, cursorPosition.ch);
+                start = {
+                    line: cursorPosition.line,
+                    ch: cursorPosition.ch - word.length
+                };
+                if (containsChar(word) && commmand.getChecked()) {
+                    clear(word, editor, start, cursorPosition);
+                }
             }
         }
     };
@@ -168,13 +172,18 @@ define(function (require, exports, module) {
     };
     
     function scSelect() {
+        var commmand = CommandManager.get("specialchars.scselect");
+        commmand.setChecked(!commmand.getChecked());
+    }
+    
+    function select() {
         var editor = EditorManager.getFocusedEditor();
         editor.document.batchOperation(function () {
             var text;
-            var selectionsCount = editor.getSelections().length;
             var selects = editor.getSelections();
+            var selectionsCount = selects.length;
             if (selectionsCount > 1) {
-                var text1 = editor.getSelectedText(true).split("\n");
+                var text1 = editor.getSelectedText(true).split("\n").split(" ");
                 var i;
                 for (i = 0; i < selectionsCount; i++) {
                     text = clear(text1[i], editor, selects[i].start, selects[i].end);
@@ -183,13 +192,14 @@ define(function (require, exports, module) {
                 text = clear(editor.getSelectedText(true), editor, editor.getSelection().start, editor.getSelection().end);
             }
         });
-        
     }
     
     AppInit.appReady(function () {
-        CommandManager.register("SC Select", "specialchars.scselect", scSelect);
+        CommandManager.register("SpecialChars", "specialchars.scselect", scSelect);
         var menu = Menus.getMenu(Menus.AppMenuBar.EDIT_MENU);
-        menu.addMenuItem("specialchars.scselect", { "key": "Ctrl-Shift-Q" });
+        menu.addMenuItem("specialchars.scselect");
+        var newCommand = CommandManager.register("SpecialChars", "specialchars.scselect2", select);
+        KeyBindingManager.addBinding(newCommand, { "key": "Ctrl-Shift-Q" });
         var currentEditor = EditorManager.getCurrentFullEditor();
         $(currentEditor).on('keyEvent', keyEventHandler);
         $(EditorManager).on('activeEditorChange', activeEditorChangeHandler);

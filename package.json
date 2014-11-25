@@ -3,7 +3,7 @@
     "title": "HTML Special Chars",
     "description": "After writing a word it converts it in HTML code. Or just select the specified text and press Strg-Shift-Q and it'll be converted.",
     "homepage": "https://github.com/Y0nnyy/SpecialChars",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "author": "Jonas Geschke (http://github.com/Y0nnyy)",
     "license": "MIT",
     "engines": {

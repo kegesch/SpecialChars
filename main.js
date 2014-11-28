@@ -203,7 +203,7 @@ define(function (require, exports, module) {
         var menu = Menus.getMenu(Menus.AppMenuBar.EDIT_MENU);
         menu.addMenuItem("specialchars.scselect");
         var newCommand = CommandManager.register("SpecialChars", "specialchars.scselect2", select);
-        KeyBindingManager.addBinding(newCommand, { "key": "Ctrl-Shift-Q" });
+        KeyBindingManager.addBinding(newCommand, { "key": "Ctrl-Shift-N" });
         var currentEditor = EditorManager.getCurrentFullEditor();
         $(currentEditor).on('keyEvent', keyEventHandler);
         $(EditorManager).on('activeEditorChange', activeEditorChangeHandler);

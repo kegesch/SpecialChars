@@ -11,6 +11,7 @@ An extension for [Brackets](https://github.com/adobe/brackets/) for better handl
 
 ### How to use SpecialChars
 The extension checks after writing a word and then pressing right arrow or space, if there is a special char in it. 
+Works only in HTML-files!
 
 **Chars supported:**
 
@@ -26,5 +27,5 @@ But if there is a file with such chars in it, which you didn't wrote, you can ju
 If you want to stop using the automatic replacement you can just uncheck the command in the Edit-Menu (SpecialChars).
 
 ***
-Tested on Brackets Sprint 38, Windows 8.1 and Ubuntu.
+Tested on Brackets 1.1, Windows 8.1 and Ubuntu.
     

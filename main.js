@@ -149,18 +149,22 @@ define(function (require, exports, module) {
             line,
             word,
             start;
+        var activedocument = DocumentManager.getCurrentDocument();
+        var language = activedocument.getLanguage();
         var commmand = CommandManager.get("specialchars.scselect");
         if (commmand.getChecked()) {
             if (((event.type === "keydown") && (event.keyCode === KeyEvent.DOM_VK_SPACE)) || ((event.type === "keydown") && (event.keyCode === KeyEvent.DOM_VK_ENTER)) || ((event.type === "keydown") && (event.keyCode === KeyEvent.DOM_VK_RIGHT))) {
-                cursorPosition = editor.getCursorPos();
-                line = editor.document.getLine(cursorPosition.line);
-                word = parseLine(line, cursorPosition.ch);
-                start = {
-                    line: cursorPosition.line,
-                    ch: cursorPosition.ch - word.length
-                };
-                if (containsChar(word) && commmand.getChecked()) {
-                    clear(word, editor, start, cursorPosition);
+                if (language.getId() === "html") {
+                    cursorPosition = editor.getCursorPos();
+                    line = editor.document.getLine(cursorPosition.line);
+                    word = parseLine(line, cursorPosition.ch);
+                    start = {
+                        line: cursorPosition.line,
+                        ch: cursorPosition.ch - word.length
+                    };
+                    if (containsChar(word) && commmand.getChecked()) {
+                        clear(word, editor, start, cursorPosition);
+                    }
                 }
             }
         }
